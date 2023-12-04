@@ -1,0 +1,113 @@
+﻿<Window x:Class="Cursova.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cursova"
+        mc:Ignorable="d"
+        Title="Main" Height="623" Width="858">
+    <Grid>
+        <WrapPanel Margin="0,10,612,521">
+            <Label Content="Current table:"></Label>
+            <ComboBox x:Name="selectedEntity" SelectionChanged="selectedEntity_SelectionChanged" Width="120"/>
+        </WrapPanel>
+        <StackPanel x:Name="teacherPanel" Margin="60,83,60,-83" Visibility="Hidden">
+            <TextBox x:Name="TeacherId" Width="200" Margin="00,0,0,5" IsReadOnly="True"/>
+            <Label Width="200" Margin="0,0,0,5" Content="Teacher`s fullname:"/>
+            <TextBox x:Name="TeacherFullName" Width="200" Margin="0,0,0,5"/>
+            <Button Content="Add Teacher" Click="AddTeacher_Click" Margin="0,10,0,0"  Width="200"/>
+            <Button Content="Update Teacher" Click="UpdateTeacher_Click" Margin="0,5,0,0"  Width="200"/>
+            <Button Content="Delete Teacher" Click="DeleteTeacher_Click" Margin="0,5,0,0"  Width="200"/>
+            <DataGrid x:Name="teachersList" SelectionChanged="teachersList_SelectionChanged"  MaxHeight="250">
+            </DataGrid>
+        </StackPanel>
+        <StackPanel x:Name="studentPanel" Margin="60,83,60,-83" Visibility="Hidden">
+            <TextBox x:Name="StudentId" Width="200" Margin="00,0,0,5" IsReadOnly="True"/>
+            <Label Width="200" Margin="0,0,0,5" Content="Student`s fullname:"/>
+            <TextBox x:Name="StudentFullName" Width="200" Margin="0,0,0,5"/>
+            <Button Content="Add Student" Click="AddStudent_Click" Margin="0,10,0,0"  Width="200"/>
+            <Button Content="Update Student" Click="UpdateStudent_Click" Margin="0,5,0,0"  Width="200"/>
+            <Button Content="Delete Student" Click="DeleteStudent_Click" Margin="0,5,0,0"  Width="200"/>
+            <DataGrid x:Name="studentsList" SelectionChanged="studentsList_SelectionChanged" MaxHeight="250">
+            </DataGrid>
+        </StackPanel>
+        <StackPanel x:Name="skipPanel" Margin="60,83,60,10">
+            <TextBox x:Name="SkipId" Width="200" Margin="00,0,0,5" IsReadOnly="True"/>
+            <Label Width="200" Margin="0,0,0,5" Content="Lesson Id:"/>
+            <ComboBox x:Name="SkipLesson" Width="400"></ComboBox>
+            <Label Width="200" Margin="0,0,0,5" Content="Student:"/>
+            <ComboBox x:Name="SkipStudent" Width="400"></ComboBox>
+            <Label Width="200" Margin="0,0,0,5" Content="Reason:"/>
+            <ComboBox x:Name="SkipReason" Width="400"></ComboBox>
+            <Label Width="200" Margin="0,0,0,5" Content="Date:"/>
+            <DatePicker x:Name="SkipDate" Width="400"></DatePicker>
+            <Button Content="Add Skip" Click="AddSkip_Click" Margin="0,10,0,0"  Width="200"/>
+            <Button Content="Update Skip" Click="UpdateSkip_Click" Margin="0,5,0,0"  Width="200"/>
+            <Button Content="Delete Skip" Click="DeleteSkip_Click" Margin="0,5,0,0"  Width="200"/>
+            <DataGrid x:Name="skipsList" SelectionChanged="skipsList_SelectionChanged" MaxHeight="250">
+            </DataGrid>
+        </StackPanel>
+        <StackPanel x:Name="schedulePanel" Margin="60,83,60,10">
+            <TextBox x:Name="ScheduleId" Width="200" Margin="00,0,0,5" IsReadOnly="True"/>
+            <Label Width="200" Margin="0,0,0,5" Content="Day  of week:"/>
+            <ComboBox x:Name="ScheduleDay" Width="200" Margin="0,0,0,5"/>
+            <Label Width="200" Margin="0,0,0,5" Content="Order:"/>
+            <TextBox x:Name="ScheduleOrder" Width="200" Margin="0,0,0,5"/>
+            <Button Content="Add Schedule" Click="AddSchedule_Click" Margin="0,10,0,0"  Width="200"/>
+            <DataGrid x:Name="schedulesList" SelectionChanged="schedulesList_SelectionChanged" MaxHeight="250">
+            </DataGrid>
+        </StackPanel>
+        <StackPanel x:Name="reasonPanel" Margin="60,83,60,-83" Visibility="Hidden">
+            <TextBox x:Name="ReasonId" Width="200" Margin="00,0,0,5" IsReadOnly="True"/>
+            <Label Width="200" Margin="0,0,0,5" Content="Reason of absence:"/>
+            <TextBox x:Name="ReasonName" Width="200" Margin="0,0,0,5"/>
+            <Button Content="Add Reason" Click="AddReason_Click" Margin="0,10,0,0"  Width="200"/>
+            <Button Content="Update Reason" Click="UpdateReason_Click" Margin="0,5,0,0"  Width="200"/>
+            <Button Content="Delete Reason" Click="DeleteReason_Click" Margin="0,5,0,0"  Width="200"/>
+            <DataGrid x:Name="reasonsList" SelectionChanged="reasonsList_SelectionChanged" MaxHeight="250">
+            </DataGrid>
+        </StackPanel>
+        <StackPanel x:Name="lessonTypePanel" Margin="60,83,60,10">
+            <TextBox x:Name="LessonTypeId" Width="200" Margin="00,0,0,5" IsReadOnly="True"/>
+            <Label Width="200" Margin="0,0,0,5" Content="LessonType:"/>
+            <TextBox x:Name="LessonTypeName" Width="200" Margin="0,0,0,5"/>
+            <Button Content="Add LessonType" Click="AddLessonType_Click" Margin="0,10,0,0"  Width="200"/>
+            <Button Content="Update LessonType" Click="UpdateLessonType_Click" Margin="0,5,0,0"  Width="200"/>
+            <Button Content="Delete LessonType" Click="DeleteLessonType_Click" Margin="0,5,0,0"  Width="200"/>
+            <DataGrid x:Name="lessonTypesList" SelectionChanged="lessonTypesList_SelectionChanged" MaxHeight="250">
+            </DataGrid>
+        </StackPanel>
+        <StackPanel x:Name="lessonPanel" Margin="60,83,60,10">
+            <TextBox x:Name="LessonId" Width="200" Margin="00,0,0,5" IsReadOnly="True"/>
+            <Label Width="200" Margin="0,0,0,5" Content="Discipline:"/>
+            <ComboBox x:Name="LessonDiscipline" Width="200"></ComboBox>
+            <Label Width="200" Margin="0,0,0,5" Content="Lesson type:"/>
+            <ComboBox x:Name="LessonLessonType" Width="200"></ComboBox>
+            <Label Width="200" Margin="0,0,0,5" Content="Schedule Id:"/>
+            <WrapPanel HorizontalAlignment="Center">
+                <ComboBox x:Name="LessonSchedule" Width="200" SelectionChanged="LessonSchedule_SelectionChanged"></ComboBox>
+                <TextBox x:Name="LessonScheduleDay" Width="200" Margin="10,0,0,5" IsReadOnly="True"/>
+                <TextBox x:Name="LessonScheduleOrder" Width="200" Margin="10,0,0,5" IsReadOnly="True"/>
+            </WrapPanel>
+            <Label Width="200" Margin="0,0,0,5" Content="Teacher:"/>
+            <ComboBox x:Name="LessonTeacher" Width="400"></ComboBox>
+            <Label Width="200" Margin="0,0,0,5" Content="Room:"/>
+            <TextBox x:Name="LessonRoom" Width="200"></TextBox>
+            <Button Content="Add Lesson" Click="AddLesson_Click" Margin="0,10,0,0"  Width="200"/>
+            <Button Content="Update Lesson" Click="UpdateLesson_Click" Margin="0,5,0,0"  Width="200"/>
+            <Button Content="Delete Lesson" Click="DeleteLesson_Click" Margin="0,5,0,0"  Width="200"/>
+            <DataGrid x:Name="lessonsList" SelectionChanged="lessonsList_SelectionChanged" MaxHeight="250">
+            </DataGrid>
+        </StackPanel>
+        <StackPanel x:Name="disciplinePanel" Margin="60,83,60,-83" Visibility="Hidden">
+            <TextBox x:Name="DisciplineId" Width="200" Margin="00,0,0,5" IsReadOnly="True"/>
+            <Label Width="200" Margin="0,0,0,5" Content="Discipline:"/>
+            <TextBox x:Name="DisciplineName" Width="200" Margin="0,0,0,5"/>
+            <Button Content="Add Discipline" Click="AddDiscipline_Click" Margin="0,10,0,0"  Width="200"/>
+            <Button Content="Update Discipline" Click="UpdateDiscipline_Click" Margin="0,5,0,0"  Width="200"/>
+            <Button Content="Delete Discipline" Click="DeleteDiscipline_Click" Margin="0,5,0,0"  Width="200"/>
+            <DataGrid x:Name="disciplinesList" SelectionChanged="disciplinesList_SelectionChanged" MaxHeight="250">
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
