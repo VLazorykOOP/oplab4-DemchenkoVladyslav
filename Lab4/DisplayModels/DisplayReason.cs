@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cursova.DBModels
+namespace Lab4.DisplayModels
 {
-    public class Student
+    public class DisplayReason
     {
         public int Id { get; set; }
-        public string FullName { get; set; }
-
-        public ICollection<Skip> Skips { get; set; }
+        public string Name { get; set; }
     }
-
 }

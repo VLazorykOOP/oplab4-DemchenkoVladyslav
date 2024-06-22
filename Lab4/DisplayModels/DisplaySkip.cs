@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cursova.DisplayModels
+namespace Lab4.DisplayModels
 {
     public class DisplaySkip
     {

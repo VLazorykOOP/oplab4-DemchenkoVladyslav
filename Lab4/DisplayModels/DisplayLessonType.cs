@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cursova.DisplayModels
+namespace Lab4.DisplayModels
 {
-    public class DisplayStudent
+    public class DisplayLessonType
     {
         public int Id { get; set; }
-        public string FullName { get; set; }
+        public string Name { get; set; }
     }
 
 }

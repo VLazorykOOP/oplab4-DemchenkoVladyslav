@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cursova.DBModels
+namespace Lab4.DBModels
 {
     public class Skip
     {

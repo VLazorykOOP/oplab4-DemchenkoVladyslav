@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cursova.DisplayModels
+namespace Lab4.DisplayModels
 {
-    public class DisplayReason
+    public class DisplayDiscipline
     {
         public int Id { get; set; }
         public string Name { get; set; }

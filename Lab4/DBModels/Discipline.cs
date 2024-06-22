@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cursova.DBModels
+namespace Lab4.DBModels
 {
-    public class LessonType
+    public class Discipline
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<Lesson> Lessons { get; set; }
     }
-
 }

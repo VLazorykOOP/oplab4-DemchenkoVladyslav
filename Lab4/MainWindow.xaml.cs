@@ -1,5 +1,5 @@
-﻿using Cursova.DBModels;
-using Cursova.DisplayModels;
+﻿using Lab4.DBModels;
+using Lab4.DisplayModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-namespace Cursova
+namespace Lab4
 {
     public partial class MainWindow : Window
     {

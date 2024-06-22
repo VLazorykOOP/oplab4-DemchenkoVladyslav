@@ -1,11 +1,11 @@
-﻿using Cursova.DBModels;
+﻿using Lab4.DBModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace Cursova
+namespace Lab4
 {
     internal class SchoolDbContext : DbContext
     {
